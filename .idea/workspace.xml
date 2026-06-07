@@ -4,15 +4,24 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="715572da-8d98-41a1-ad17-0303d0d75c44" name="Changes" comment="feat: traduz a coluna necessária e usa um notebook jupyter temporariamente">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/fbd-t1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/fbd-t1.iml" afterDir="false" />
+    <list default="true" id="715572da-8d98-41a1-ad17-0303d0d75c44" name="Changes" comment="refactor: muda para .py">
+      <change afterPath="$PROJECT_DIR$/sql_files/create_normalized_tables.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sql_files/insert_bans.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sql_files/insert_champions.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sql_files/insert_games.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sql_files/insert_games_teams.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sql_files/insert_matches.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sql_files/insert_player_game_stats.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sql_files/insert_players.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sql_files/insert_teams.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sql_files/insert_tournaments.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/create_raw.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/create_schema.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/db_utils.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/normalizer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,43 +56,87 @@
   &quot;fromUser&quot;: false
 }</component>
   <component name="ProjectId" id="3DfcDPCpY8CrwO61oJ08jnYvodU" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python.install_model.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/avila/PycharmProjects/fbd-t1&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.create_schema (1).executor": "Run",
+    "Python.create_schema.executor": "Run",
+    "Python.ingest_raw.executor": "Run",
+    "Python.install_model.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.normalizer.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/avila/PycharmProjects/fbd-t1",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql_aurora&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql_aurora"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\avila\PycharmProjects\fbd-t1" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\avila\PycharmProjects\fbd-t1\src" />
+      <recent name="C:\Users\avila\PycharmProjects\fbd-t1\sql_files" />
+      <recent name="C:\Users\avila\PycharmProjects\fbd-t1" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="create_schema" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="fbd-t1" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="DEBUG_JUST_MY_CODE" value="false" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="RUN_TOOL" value="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/create_schema.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.create_schema" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -111,7 +164,9 @@
       <workItem from="1780501741386" duration="3151000" />
       <workItem from="1780507569933" duration="10000" />
       <workItem from="1780507620581" duration="2117000" />
-      <workItem from="1780517719869" duration="11000" />
+      <workItem from="1780517719869" duration="75000" />
+      <workItem from="1780790896300" duration="12345000" />
+      <workItem from="1780833346561" duration="5339000" />
     </task>
     <task id="LOCAL-00001" summary="init: script inicial">
       <option name="closed" value="true" />
@@ -137,7 +192,15 @@
       <option name="project" value="LOCAL" />
       <updated>1778695139499</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="refactor: muda para .py">
+      <option name="closed" value="true" />
+      <created>1780517776027</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1780517776027</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -157,10 +220,15 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init: script inicial" />
     <MESSAGE value="feat: traduz a coluna necessária e usa um notebook jupyter temporariamente" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: traduz a coluna necessária e usa um notebook jupyter temporariamente" />
+    <MESSAGE value="refactor: muda para .py" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: muda para .py" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/fbd_t1$install_model.coverage" NAME="install_model Coverage Results" MODIFIED="1778692504438" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/fbd_t1$main.coverage" NAME="main Coverage Results" MODIFIED="1780505547137" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/fbd_t1$normalizer.coverage" NAME="normalizer Coverage Results" MODIFIED="1780836907640" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/fbd_t1$create_schema.coverage" NAME="create_schema Coverage Results" MODIFIED="1780836880727" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/fbd_t1$ingest_raw.coverage" NAME="ingest_raw Coverage Results" MODIFIED="1780836819450" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/fbd_t1$create_schema__1_.coverage" NAME="create_schema (1) Coverage Results" MODIFIED="1780798146980" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/fbd_t1$main.coverage" NAME="main Coverage Results" MODIFIED="1780835470419" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
   </component>
 </project>
