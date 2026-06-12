@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/sql_files/_consultas.sql" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/sql_files/create_normalized_tables.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/sql_files/insert_tournaments.sql" dialect="GenericSQL" />
-    <file url="file://$PROJECT_DIR$/src/create_raw.py" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/step_01_create_and_load_raw.py" dialect="MySQL" />
     <file url="PROJECT" dialect="MySQL" />
   </component>
 </project>

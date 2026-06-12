@@ -1,15 +1,16 @@
-INSERT INTO team (team_name, team_region)
-SELECT DISTINCT t.team_name, t.team_region
-FROM (
-    SELECT Team1 AS team_name, Team1_region AS team_region
-    FROM raw_matches
+insert into team (team_name, team_region)
+select distinct t.team_name, t.team_region
+from (
+    select Team1 as team_name, Team1_region as team_region
+    from raw_matches
 
-    UNION
+    union
 
-    SELECT Team2 AS team_name, Team2_region AS team_region
-    FROM raw_matches
+    select Team2 as team_name, Team2_region as team_region
+    from raw_matches
 ) t
-LEFT JOIN team existing
-    ON existing.team_name = t.team_name
-   AND existing.team_region = t.team_region
-WHERE existing.team_name IS NULL;
+
+left join team existing
+    on existing.team_name = t.team_name
+    and existing.team_region = t.team_region
+    where existing.team_name is null;

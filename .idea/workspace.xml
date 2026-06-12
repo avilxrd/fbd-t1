@@ -5,23 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="715572da-8d98-41a1-ad17-0303d0d75c44" name="Changes" comment="refactor: muda para .py">
-      <change afterPath="$PROJECT_DIR$/sql_files/create_normalized_tables.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sql_files/insert_bans.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sql_files/insert_champions.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sql_files/insert_games.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sql_files/insert_games_teams.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sql_files/insert_matches.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sql_files/insert_player_game_stats.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sql_files/insert_players.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sql_files/insert_teams.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sql_files/insert_tournaments.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/create_raw.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/create_schema.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/db_utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/normalizer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sql_files/_consultas.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/fbd-t1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/fbd-t1.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sql_files/insert_teams.sql" beforeDir="false" afterPath="$PROJECT_DIR$/sql_files/insert_teams.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/create_raw.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/step_01_create_and_load_raw.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/create_schema.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/step_02_create_normalized_schema.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/db_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/db_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/normalizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/step_03_migrate_to_normalized.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +41,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/avilxrd/fbd-t1.git&quot;,
-    &quot;accountId&quot;: &quot;20753c05-c5cc-4256-b7ef-4a1428cc8784&quot;
+    &quot;accountId&quot;: &quot;c84d3d13-81d5-4f55-b109-829c54051e9f&quot;
   }
 }</component>
   <component name="ProjectColorInfo">{
@@ -69,19 +62,24 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "Python.create_schema (1).executor": "Run",
     "Python.create_schema.executor": "Run",
+    "Python.db_utils.executor": "Run",
     "Python.ingest_raw.executor": "Run",
     "Python.install_model.executor": "Run",
     "Python.main.executor": "Run",
     "Python.normalizer.executor": "Run",
+    "Python.step_01_create_and_load_raw.executor": "Run",
+    "Python.step_02_create_normalized_schema (1).executor": "Run",
+    "Python.step_02_create_normalized_schema.executor": "Run",
+    "Python.step_03_migrate_to_normalized.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/avila/PycharmProjects/fbd-t1",
+    "last_opened_file_path": "C:/Users/avila/PycharmProjects/fbd-t1/sql_files",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -98,6 +96,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\avila\PycharmProjects\fbd-t1\sql_files" />
       <recent name="C:\Users\avila\PycharmProjects\fbd-t1" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -107,7 +106,7 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="create_schema" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="step_01_create_and_load_raw" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="fbd-t1" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -123,7 +122,57 @@
       <option name="DEBUG_JUST_MY_CODE" value="false" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="RUN_TOOL" value="" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/create_schema.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/step_01_create_and_load_raw.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="step_02_create_normalized_schema (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="fbd-t1" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="DEBUG_JUST_MY_CODE" value="false" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="RUN_TOOL" value="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/step_02_create_normalized_schema.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="step_02_create_normalized_schema" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="fbd-t1" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="DEBUG_JUST_MY_CODE" value="false" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="RUN_TOOL" value="" />
+      <option name="SCRIPT_NAME" value="C:\Users\avila\PycharmProjects\fbd-t1\src\step_02_create_normalized_schema.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -134,14 +183,17 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.create_schema" />
+        <item itemvalue="Python.step_02_create_normalized_schema (1)" />
+        <item itemvalue="Python.step_01_create_and_load_raw" />
+        <item itemvalue="Python.step_02_create_normalized_schema" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-024ed6589d45-c2ffad84badb-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-261.23567.174" />
+        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-PY-261.24374.152" />
+        <option value="bundled-python-sdk-c59985aa861c-c2ffad84badb-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-261.24374.152" />
       </set>
     </attachedChunks>
   </component>
@@ -167,6 +219,11 @@
       <workItem from="1780517719869" duration="75000" />
       <workItem from="1780790896300" duration="12345000" />
       <workItem from="1780833346561" duration="5339000" />
+      <workItem from="1781186386405" duration="2275000" />
+      <workItem from="1781289347232" duration="1502000" />
+      <workItem from="1781290898161" duration="13000" />
+      <workItem from="1781291738724" duration="804000" />
+      <workItem from="1781292610426" duration="1672000" />
     </task>
     <task id="LOCAL-00001" summary="init: script inicial">
       <option name="closed" value="true" />
@@ -226,9 +283,14 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/fbd_t1$install_model.coverage" NAME="install_model Coverage Results" MODIFIED="1778692504438" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/fbd_t1$normalizer.coverage" NAME="normalizer Coverage Results" MODIFIED="1780836907640" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/fbd_t1$step_02_create_normalized_schema__1_.coverage" NAME="step_02_create_normalized_schema (1) Coverage Results" MODIFIED="1781291956703" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/fbd_t1$create_schema.coverage" NAME="create_schema Coverage Results" MODIFIED="1780836880727" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/fbd_t1$step_01_create_and_load_raw.coverage" NAME="step_01_create_and_load_raw Coverage Results" MODIFIED="1781292772104" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/fbd_t1$ingest_raw.coverage" NAME="ingest_raw Coverage Results" MODIFIED="1780836819450" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/fbd_t1$create_schema__1_.coverage" NAME="create_schema (1) Coverage Results" MODIFIED="1780798146980" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
-    <SUITE FILE_PATH="coverage/fbd_t1$main.coverage" NAME="main Coverage Results" MODIFIED="1780835470419" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/fbd_t1$step_02_create_normalized_schema.coverage" NAME="step_02_create_normalized_schema Coverage Results" MODIFIED="1781292873968" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/fbd_t1$main.coverage" NAME="main Coverage Results" MODIFIED="1781291835371" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/fbd_t1$db_utils.coverage" NAME="db_utils Coverage Results" MODIFIED="1781292732539" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/fbd_t1$step_03_migrate_to_normalized.coverage" NAME="step_03_migrate_to_normalized Coverage Results" MODIFIED="1781292899224" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
   </component>
 </project>

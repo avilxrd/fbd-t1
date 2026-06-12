@@ -12,9 +12,10 @@ def get_engine_no_db():
     host = os.getenv("DB_HOST")
 
     return create_engine(
-        f"mysql+mysqlconnector://{user}:{password}@{host}",
+        f"mysql+pymysql://{user}:{password}@{host}",
         pool_pre_ping=True
     )
+
 
 
 def get_engine():
@@ -26,7 +27,7 @@ def get_engine():
     db = os.getenv("DB_NAME")
 
     return create_engine(
-        f"mysql+mysqlconnector://{user}:{password}@{host}/{db}",
+        f"mysql+pymysql://{user}:{password}@{host}/{db}",
         pool_pre_ping=True
     )
 
