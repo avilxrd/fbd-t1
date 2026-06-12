@@ -1,5 +1,14 @@
 ### Organização
-O diretório está organizado da seguinte forma, seguindo a lista de entrega definida nos slides (onde achar cada arquivo).
+O diretório está organizado da seguinte forma, seguindo a lista de entrega definida nos slides (onde achar cada arquivo).<br>
+``
+- Fonte escolhida: `./ori.csv`
+- Script de criação da tabela desnormalizada: `./src/step_01_create_and_load_raw.py`
+- Script de criação das tabelas normalizadas: `./sql_files/create_normalized_tables.sql`
+- Scripts sql de alimentação, códigos de extração: `./sql_files/insert_{step}.sql` + `./src/step_02_create_normalized_schema.py`
+- Modelo ER: `./other_files/er_diagram.png`
+- Modelo Relacional: `./other_files/modelo_relacional.pdf`
+- Consultas elaboradas: `./sql_files/_consultas.sql`
+- Apresentação final: `./other_files/apresentacao.pdf`
 
 
 
